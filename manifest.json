@@ -1,0 +1,36 @@
+{
+    "manifest_version": 2,
+    "name": "Noodle Be Gone",
+    "version": "0.5",
+    
+    "description": "Looks for mentions of snakes and warns the user",
+    
+    "icons": 
+    { 
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png" 
+    },
+    "browser_action": 
+    {
+         "default_icon": "icons/icon19.png"
+    },
+    
+    "permissions": 
+    [
+        "tabs", 
+        "http://*/*",
+        "http://*/*",
+        "storage"
+    ],
+        
+    "content_scripts": 
+    [
+        {
+            "matches": ["http://*/*", "https://*/*"],
+            "js": ["reader.js"],
+            "run_at": "document_end"
+        }
+    ]
+    
+}
